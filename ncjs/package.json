@@ -1,0 +1,27 @@
+{
+  "name": "ncjs-meetup",
+  "version": "0.1.0",
+  "description": "Subpackage for using reveal.js for NorcalJS Meetup group",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "generate": "node ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/garajo/reveal.js-NorcalJS"
+  },
+  "keywords": [
+    "meetup",
+    "presentation",
+    "generation"
+  ],
+  "author": "Garrick Lee",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^1.1.0"
+  },
+  "engines": {
+    "npm": "~6.x.x"
+  }
+}
