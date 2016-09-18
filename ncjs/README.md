@@ -63,6 +63,10 @@ const options = {
 ```
 - Make sure you update the README.
 
+## Updating the default template
+
+It's html, js, and css :)
+
 ## Updating Reveal.js
 
 Sync this fork with the [original repository this was forked from](https://github.com/hakimel/reveal.js)
