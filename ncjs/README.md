@@ -4,7 +4,7 @@ The purpose of this fork and sub-package is to provide presentation page generat
 
 # Generate
 
-- clone this repo `git clone git@github.com:garajo/reveal.js-NorcalJS.git`
+- clone this repo `git clone git@github.com:garajo/reveal.js-ncjs.git`
 - Run `npm i`. You will have to also install node modules in `ncjs/`, `cd ncjs && npm i`
 - To run the development server and see sample presentations: From the root folder, run `npm start`
   - navigate to http://localhost:8000/ for a 'Hello World' example
