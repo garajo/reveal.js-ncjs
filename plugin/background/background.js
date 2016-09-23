@@ -20,18 +20,14 @@
   ]
 
   window.addEventListener('keydown', function(evt){
-    console.log(evt.key)
-    console.log(evt.key.match(/^[0-9]$/))
     var cs = Reveal.getCurrentSlide()
     if (evt.ctrlKey && evt.key.match(/^[0-9]$/)){
-      console.log('!!')
       evt.preventDefault()
       evt.stopImmediatePropagation()
       cs.setAttribute('data-background-image', inceptgifs[parseInt(evt.key)])
       cs.setAttribute('data-background-size', 'contain')
       Reveal.sync()
     }else if (evt.ctrlKey && evt.key === '`'){
-      console.log('**')
       cs.removeAttribute('data-background-image')
       Reveal.sync()
     }
