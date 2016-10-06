@@ -8,12 +8,13 @@
 const fs = require('fs')
 const path = require('path')
 const archiver = require('archiver')
+const config = require('./package.json').config
 
 const defaults = {
   reservedfilename : 'default',
   dirpath : 'presos/',
   templatefile: 'template.html',
-  basepath: '../../',
+  basepath: config.upstreampath,
 }
 
 const options = {
@@ -39,15 +40,6 @@ const tmplinstance = template.replace(/<%-(.*?)%>/g, (match, p1) => {
   return options[p1.trim()]
 })
 
-options.basepath = './'
-
-const zipinstance = template.replace(/<%-(.*?)%>/g, (match, p1) => {
-
-  if(!options[p1.trim()]) throw new Error('no key found')
-
-  return options[p1.trim()]
-})
-
 const writepath = defaults.dirpath + options.filename.replace(/\.html?$/, '')
 
 fs.stat(`${writepath}.html`, (err, stat) => {
@@ -62,28 +54,6 @@ fs.stat(`${writepath}.html`, (err, stat) => {
     // file does not exist
     fs.writeFile(`${writepath}.html`, tmplinstance, (err, msg) => {
       if(err) throw err
-
-      var output = fs.createWriteStream(`${writepath}.zip`)
-      const archive = archiver('zip')
-
-      output.on('close', function() {
-        console.log(`${writepath}.zip has been written.`, '\n');
-      });
-
-      archive.on('error', function(err) {
-        throw err;
-      });
-
-      archive.pipe(output);
-
-      archive
-        .append(zipinstance, {name: 'index.html'})
-        .glob('../css/**')
-        .glob('../js/**')
-        .glob('../lib/**')
-        .glob('../images/**')
-        .glob('../plugin/**')
-        .finalize()
 
       console.log(`open: http://localhost:8000/ncjs/${options.dirpath}${options.filename}`, '\n')
     })
