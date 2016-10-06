@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "generate": "node ./"
+    "generate": "node ./",
+    "zip": "node ./zippreso.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,11 @@
   },
   "engines": {
     "npm": "~6.x.x"
+  },
+  "config": {
+    "upstreampath": "../../"
+  },
+  "dependencies": {
+    "escape-string-regexp": "^1.0.5"
   }
 }
