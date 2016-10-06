@@ -55,7 +55,7 @@ fs.stat(`${writepath}.html`, (err, stat) => {
     fs.writeFile(`${writepath}.html`, tmplinstance, (err, msg) => {
       if(err) throw err
 
-      console.log(`open: http://localhost:8000/ncjs/${options.dirpath}${options.filename}`, '\n')
+      console.log(`With your dev server running, open: http://localhost:8000/ncjs/${options.dirpath}${options.filename}.html`, '\n')
     })
   }
 })
