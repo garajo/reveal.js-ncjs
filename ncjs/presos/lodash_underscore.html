@@ -1,0 +1,241 @@
+<!--
+@Author: gajo
+@Date:   2016-09-14T22:07:37-07:00
+@Last modified by:   gajo
+@Last modified time: 2016-09-14T22:55:29-07:00
+-->
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>NorcalJS Meetup - lodash _ underscore</title>
+
+	<link rel="stylesheet" href="../../css/reveal.css">
+	<link rel="stylesheet" href="../../css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>
+						_underscore
+					</h1>
+				<h3>
+						_versus
+					</h3>
+				<h1>
+						_lodash
+					</h1>
+				<footer>
+					revisited 10/2016
+				</footer>
+			</section>
+
+			<section>
+				<h2 id="underscore">underscore</h2>
+				<p>&quot;Underscore.js is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.&quot;</p>
+				<hr>
+				<p>author: Jeremy Ashkenas, also for backbone.js &amp; coffeescript</p>
+				<hr>
+				<p>api docs: <a href="http://underscorejs.org/">http://underscorejs.org/</a></p>
+			</section>
+
+			<section>
+				<h2 id="lodash">lodash</h2>
+				<p>&quot;A modern JavaScript utility library delivering modularity, performance & extras.&quot;</p>
+				<hr>
+				<p>forked by John-David Dalton, tracks underscore </p>
+				<hr>
+				<p>more modular and potentially more efficient</p>
+				<hr>
+				<p>api docs: <a href="https://lodash.com/docs">https://lodash.com/docs</a></p>
+			</section>
+
+			<section>
+				<h2 id="why-use-them">_what are they for?</h2>
+				<ul>
+					<li>useful utilities
+						<ul>
+							<li>for applications that need data manipulation and/or functional control</li>
+							<li>compatibility across browsers </li>
+						</ul>
+					</li>
+					<li>expressiveness, readability, code organization
+						<ul>
+							<li><a href="http://joelhooks.com/blog/2014/02/06/stop-writing-for-loops-start-using-underscorejs/">http://joelhooks.com/blog/2014/02/06/stop-writing-for-loops-start-using-underscorejs/</a></li>
+							<li>
+								not extending native JS means the decorator design pattern
+							</li>
+						</ul>
+					</li>
+					<li>
+						higher order functions that supports and encourages cleaner approaches to functional programming, though primitive
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Some code</h2>
+				<ul>
+					<li>
+						
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2 id="_comparisons">_stacked up to each other</h2>
+				<ul>
+					<li>file size
+						<ul>
+							<li>underscore
+								<ul style="font-size:.7em;">
+									<li>
+										Development Version (1.8.3) 52kb, Uncompressed with Plentiful Comments
+									</li>
+									<li>
+										Production Version (1.8.3) 5.7kb, Minified and Gzipped (Source Map)
+									</li>
+								</ul>
+							</li>
+							<li>lodash
+								<ul style="font-size:.7em;">
+									<li>
+										Core build (~4kB gzipped)
+									</li>
+									<li>
+										Full build (~23kB gzipped)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						performance
+						<ul style="font-size:.5em; text-decoration: line-through;">
+							<li>
+								- https://jsperf.com/reduce-underscore-js-vs-lo-dash
+							</li>
+							<li>
+								- https://jsperf.com/native-vs-array-js-vs-underscore/8
+							</li>
+							<li>
+								- http://jsperf.com/lodash-fib
+							</li>
+						</ul>
+						<ul>
+							<li>
+								negligible
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>_so... why do they both exist?</h2>
+				<ul>
+					<li>In the beginning, it was about a small piece of code wrapping. But over time widened to a chasm of code ideology.</li>
+					<li>underscore - succint and elegant
+						<ul style="font-size:.7em;">
+							<li>
+								prototyping
+							</li>
+							<li>
+								succint client library
+							</li>
+						</ul>
+					</li>
+
+					<li>lodash - "fatter", but better support for JS modules
+						<ul style="font-size:.7em;">
+							<li>modules, <a href="https://www.npmjs.com/browse/keyword/lodash-modularized">https://www.npmjs.com/browse/keyword/lodash-modularized</a>; ie. require(&#39;lodash&#39;).map</li>
+							<li>better support for ES6, Common, AMD, and chaining methods</li>
+							<li>extra methods</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2 id="possible-merge">_merged codebase</h2>
+				<ul>
+					<li>After a series of community conflicts, the code base was merged, done by many of the same core contributors.</li>
+					<li>But, there were some hard feelings during the merge, and this might possibly be at the tail end of both libraries development cycle.</li>
+					<li>The issue thread: <a href="https://goo.gl/wIXrHC">https://goo.gl/wIXrHC</a></li>
+					<li>lodash: {issues: 0, pullRequests: 0}</li>
+					<li><a href="https://github.com/jashkenas/underscore/issues">
+						J. Dalton is a main contributor
+					</a>to Underscore.
+					</li>
+					<li>Do you `modularize` or `all-in-one`?</li>
+				</ul>
+			</section>
+			<section>
+				<h2 id="takeaways">_takeaways</h2>
+				<ul>
+					<li>The lodash fork is good CS case study of contrasting code philosophies.</li>
+					<li>Use lodash modularization in node applications for speed and to reduce code bloat.</li>
+					<li>Use underscore on client apps for quick and easy loading, base utility functionality, trials, and reduce client-only (non-browserify) code bloat</li>
+					<li>You can use lodash modularized on client with browserify or lodash-cli and custom builds.</li>
+					<li>Lodash is more intricate, which means more to understand.</li>
+					<li>Native JS methods are catching up. Implementing spread, rest, and other ES6 paradigms will deprecate many methods.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>
+					Thank you!
+				</h2>
+				<p>Questions?</p>
+				<br />
+				<p>You can also send me a message on Meetup.</p>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="../../lib/js/head.min.js"></script>
+	<script src="../../js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+				src: '../../plugin/markdown/marked.js'
+			}, {
+				src: '../../plugin/markdown/markdown.js'
+			}, {
+				src: '../../plugin/notes/notes.js',
+				async: true
+			}, {
+				src: '../../plugin/highlight/highlight.js',
+				async: true,
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}]
+		});
+	</script>
+</body>
+
+</html>
