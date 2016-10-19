@@ -34,15 +34,11 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>
-						_underscore
-					</h1>
-				<h3>
-						_versus
-					</h3>
-				<h1>
-						_lodash
-					</h1>
+				<h2>
+						_underscore/_lodash
+					</h2>
+
+					<h3>JS utility for yesterday, today, and tomorrow</h3>
 				<footer>
 					revisited 10/2016
 				</footer>
@@ -86,18 +82,44 @@
 						</ul>
 					</li>
 					<li>
-						higher order functions that supports and encourages cleaner approaches to functional programming, though primitive
+						higher order functions that supports and encourages cleaner approaches to functional programming, though primitive and spotty*
 					</li>
 				</ul>
 			</section>
 
-			<section>
-				<h2>Some code</h2>
-				<ul>
-					<li>
-						
-					</li>
-				</ul>
+			<section style="font-size: .7em;">
+				<h2>Some examples</h2>
+
+				<pre><code>var lauging = _.times(2, 'har ').trim(); // 'har har'</code></pre>
+
+
+				<pre><code>buttonElement.bind('keydown', _.throttle(goEasyOnMe, 1000));</code></pre>
+
+				<pre><code>var objB = _.cloneDeep(objA); // JSON.parse(JSON.stringify(objA))</code></pre>
+
+				<pre><code>_.assign(objA, objB); // Object.prototype.extend = function(obj){ ... }</code></pre>
+
+				<h4>Functional Programming</h4>
+
+				<pre><code>_fibonacci = _.memoize((n) => n < 2 ? n : _fibonacci(n - 1) + _fibonacci(n - 2));</code></pre>
+
+				<pre><code>function getUser(crit1, crit2){
+  const data = {firstname: 'John', middlename: 'Leopold', lastname: 'Doe'};
+  return data[crit1] + ' ' + data[crit2];
+}
+
+const curried = require('lodash').curry(getUser);
+
+console.log(curried('firstname')('middlename')); // John Leopold
+console.log(curried('firstname')('lastname')); // John Doe
+console.log(curried('firstname')('firstname')); // John John
+</code></pre>
+
+				<pre><code>const _ = require('lodash');
+var data2 = [false, [undefined, [null, [(3-3), 'foobar', 'foobaz']], 'barbaz', 5]];
+var flow = _.flow(_.flattenDeep, _.compact, _.head);
+console.log(flow(data2)); // foobar</code></pre>
+
 			</section>
 
 			<section>
@@ -168,6 +190,7 @@
 						<ul style="font-size:.7em;">
 							<li>modules, <a href="https://www.npmjs.com/browse/keyword/lodash-modularized">https://www.npmjs.com/browse/keyword/lodash-modularized</a>; ie. require(&#39;lodash&#39;).map</li>
 							<li>better support for ES6, Common, AMD, and chaining methods</li>
+							<li>better for server</li>
 							<li>extra methods</li>
 						</ul>
 					</li>
@@ -190,13 +213,13 @@
 			</section>
 			<section>
 				<h2 id="takeaways">_takeaways</h2>
-				<ul>
+				<ul style="font-size:.9em;">
 					<li>The lodash fork is good CS case study of contrasting code philosophies.</li>
 					<li>Use lodash modularization in node applications for speed and to reduce code bloat.</li>
 					<li>Use underscore on client apps for quick and easy loading, base utility functionality, trials, and reduce client-only (non-browserify) code bloat</li>
 					<li>You can use lodash modularized on client with browserify or lodash-cli and custom builds.</li>
 					<li>Lodash is more intricate, which means more to understand.</li>
-					<li>Native JS methods are catching up. Implementing spread, rest, and other ES6 paradigms will deprecate many methods.</li>
+					<li>Native JS methods are catching up. Implementing Object, spread, rest, and other newer standards will deprecate many methods.</li>
 				</ul>
 			</section>
 			<section>
