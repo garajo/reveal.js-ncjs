@@ -42,6 +42,9 @@
 				<footer>
 					revisited 10/2016
 				</footer>
+				<aside class="notes">
+					Original was to examine potential merged.
+				</aside>
 			</section>
 
 			<section>
@@ -85,10 +88,14 @@
 						higher order functions that supports and encourages cleaner approaches to functional programming, though primitive and spotty*
 					</li>
 				</ul>
+				<aside class="notes">
+					curious: Anyone need to fulfill IE6?
+					spotty*: not all functions follow the rules to functional programming, so you have to know which ones
+				</aside>
 			</section>
 
 			<section style="font-size: .7em;">
-				<h2>Some examples</h2>
+				<h2>_Some examples</h2>
 
 				<pre><code>var lauging = _.times(2, 'har ').trim(); // 'har har'</code></pre>
 
@@ -108,17 +115,21 @@
   return data[crit1] + ' ' + data[crit2];
 }
 
-const curried = require('lodash').curry(getUser);
+const curried = _.curry(getUser);
 
 console.log(curried('firstname')('middlename')); // John Leopold
 console.log(curried('firstname')('lastname')); // John Doe
 console.log(curried('firstname')('firstname')); // John John
 </code></pre>
 
-				<pre><code>const _ = require('lodash');
-var data2 = [false, [undefined, [null, [(3-3), 'foobar', 'foobaz']], 'barbaz', 5]];
-var flow = _.flow(_.flattenDeep, _.compact, _.head);
-console.log(flow(data2)); // foobar</code></pre>
+<pre><code>var data = [false, [undefined, [null, [(3-3), 'foobar', 'foobaz']], 'barbaz', 5]];
+var flow = require('lodash').flow(_.flattenDeep, _.compact, _.head);
+console.log(flow(data)); // foobar</code></pre>
+
+<aside class="notes">
+	extra points:
+	_.flow in underscore?
+</aside>
 
 			</section>
 
@@ -164,11 +175,14 @@ console.log(flow(data2)); // foobar</code></pre>
 						</ul>
 						<ul>
 							<li>
-								negligible
+								now negligible
 							</li>
 						</ul>
 					</li>
 				</ul>
+				<aside class="notes">
+					Performance use to belong to lodash, but since the merged codebase, they are now neglible. 
+				</aside>
 			</section>
 
 			<section>
@@ -241,7 +255,7 @@ console.log(flow(data2)); // foobar</code></pre>
 		// More info https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
 			history: true,
-
+			transition: 'convex',
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies: [{
 				src: '../../plugin/markdown/marked.js'
