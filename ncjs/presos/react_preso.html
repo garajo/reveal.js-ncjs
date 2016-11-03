@@ -1,0 +1,318 @@
+<!--
+@Author: gajo
+@Date:   2016-09-14T22:07:37-07:00
+@Last modified by:   gajo
+@Last modified time: 2016-09-14T22:55:29-07:00
+-->
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>NorcalJS Meetup</title>
+
+	<link rel="stylesheet" href="../../css/reveal.css">
+	<link rel="stylesheet" href="../../css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>
+					NorcalJS Meetup
+				</h1>
+			</section>
+
+			<section>
+				<h1 id="introduction-to-react">Introduction to React</h1>
+				<p>Sample Implementation: <br />
+					<a href="https://gist.github.com/danawoodman/9cfddb1a0c934a35f31a">https://gist.github.com/danawoodman/9cfddb1a0c934a35f31a</a>
+				</p>
+			</section>
+			<section>
+				<h3 id="base-html">Base.html</h3>
+				<ul>
+					<li>Including React</li>
+					<li>babel</li>
+				</ul>
+			</section>
+			<section>
+				<h3 id="basic-js">Basic.js</h3>
+				<section>
+					<ul>
+						<li>React.DOM
+							<ul>
+								<li>render()</li>
+								<li>unmountComponentAtNode()</li>
+								<li>findDOMNode()</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>JSX
+							<ul>
+								<li>
+									syntactic sugar for the React.createElement(component, props, ...children) function
+									<br />
+									<pre>
+										<code>React.createElement(
+  'div',
+  {className: 'sidebar'},
+  null
+)</code>
+									</pre>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>
+							JSX Practices
+							<ul style="font-size:.9em;">
+								<li>
+									<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#react-must-be-in-scope">React must be in scope</a>
+								</li>
+								<li>
+									<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized">Must be capitalized</a>
+								</li>
+								<li>
+									<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#props-in-jsx">Props in JSX</a>
+									<ul style="font-size:.8em;">
+										<li>
+											<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#javascript-expressions">evaluates JavaScript</a>
+										</li>
+										<li>
+											<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#spread-attributes">manage props verbosity with spread attributes</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#children-in-jsx">Children in JSX</a>
+									<ul style="font-size:.8em;">
+										<li>
+											Strings
+										</li>
+										<li>
+											JSX
+										</li>
+										<li>
+											JS Expressions
+										</li>
+										<li>
+											Functions
+										</li>
+										<li>
+											Booleans, Null, Undefined are valid, but ignored
+										</li>
+									</ul>
+								</li>
+								<li>
+									Wrap in parentheses
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3 id="simple-component-js">Simple-component.js</h3>
+				<ul>
+					<li><a href="https://facebook.github.io/react/docs/react-api.html#createclass">React.createClass</a>
+						<ul>
+							<li>render()</li>
+							<li><a href="https://www.quora.com/What-is-the-difference-between-React-createClass-React-createElement-React-createFactory-and-React-createMixin">others</a>
+								<ul>
+									<li><a href="https://gist.github.com/garajo/1a38ff1db4d86abf0ef7a76b52af9fb7#file-3-simple-component-js">JSX</a> == <a href="https://facebook.github.io/react/docs/react-api.html#createelement">createElement()</a></li>
+									<li><a href="https://facebook.github.io/react/docs/react-api.html#createfactory">createFactory()</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3 id="internal-state-js">Internal-state.js</h3>
+				<section>
+					<h5><a href="https://facebook.github.io/react/docs/react-component.html">React.Component</a></h5>
+					<ul>
+						<li>
+							Updating state
+							<ul style="font-size:.8em;">
+								<li>setState()</li>
+								<li>forceUpdate()</li>
+							</ul>
+						</li>
+						<li>
+							Class Properties
+							<ul style="font-size:.8em;">
+								<li>defaultProps</li>
+								<li>displayName</li>
+								<li>propTypes</li>
+							</ul>
+						</li>
+						<li>
+							Instance Properties
+							<ul style="font-size:.8em;">
+								<li>props</li>
+								<li>state</li>
+							</ul>
+						</li>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li>Props versus state</li>
+						<li><a href="https://facebook.github.io/react/docs/react-api.html#react.purecomponent">
+							React.PureComponent
+						</a>
+							<ul>
+								<li>implements <code>shouldComponentUpdate()</code> with a shallow prop and state comparison.</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3 id="combining-components-js">Combining-components.js</h3>
+				<section>
+					<ul>
+						<li>Separation of Concerns
+							<ul>
+								<li>
+									Passing props between components
+								</li>
+								<li>
+									Parent props can be a child's initial state
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>React.Children
+							<ul>
+								<li>React.Children.map</li>
+								<li>React.Children.forEach</li>
+								<li>React.Children.count</li>
+								<li>React.Children.only</li>
+								<li>React.Children.toArray</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3 id="whole-shebang-js">Whole-shebang.js</h3>
+				<section>
+					<ul>
+						<li>getInitialState()</li>
+						<li>getDefaultProps</li>
+						<li>propTypes
+							<ul>
+								<li>React.PropTypes</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>mixins</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Lifecycle Methods
+							<ul>
+								<li>Mounting: componentWillMount</li>
+								<li>Mounting: componentDidMount</li>
+								<li>Updating: componentWillReceiveProps</li>
+								<li>Updating: shouldComponentUpdate</li>
+								<li>Updating: componentWillUpdate</li>
+								<li>Updating: componentDidUpdate</li>
+								<li>Unmounting: componentWillUnmount</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Event-callbacks</h3>
+				<p>Sample Implementation: <br />
+					<a style="font-size:.5em;" href="https://gist.github.com/garajo/1a38ff1db4d86abf0ef7a76b52af9fb7#file-7-event-callbacks-js">https://gist.github.com/garajo/1a38ff1db4d86abf0ef7a76b52af9fb7#file-7-event-callbacks-js</a>
+				</p>
+				<ul>
+					<li>Separation and composition</li>
+					<li>Bind</li>
+					<li>Other patterns (no Flux or Redux):
+						<a style="font-size:.7em;" href="http://andrewhfarmer.com/component-communication/">http://andrewhfarmer.com/component-communication/</a>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Going further</h3>
+				<ul>
+					<li>
+						Complex app state management with Flux or Redux
+					</li>
+					<li>
+						Testing Components with Enzyme
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../../lib/js/head.min.js"></script>
+	<script src="../../js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+			// Transition style
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+				src: '../../plugin/markdown/marked.js'
+			}, {
+				src: '../../plugin/markdown/markdown.js'
+			}, {
+				src: '../../plugin/notes/notes.js',
+				async: true
+			}, {
+				src: '../../plugin/highlight/highlight.js',
+				async: true,
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}]
+		});
+	</script>
+</body>
+
+</html>
